@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:luckycat/utils/toast.dart';
+import 'package:luckycat/ui/home/controller/home_controller.dart';
+import 'package:luckycat/utils/date_format_utils.dart';
 
+import '../../models/accout_model.dart';
+import '../../models/utils/convert_utils.dart';
 import '../../res/colors.dart';
 import '../../res/gaps.dart';
 import '../../utils/utils.dart';
@@ -20,7 +22,7 @@ class AddAccountPage extends GetView<AddAccountController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('新增交易'),
+        title: const Text('新增交易'),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -65,16 +67,12 @@ class AddAccountPage extends GetView<AddAccountController> {
                 ),
               ),
               Gaps.vGaps10,
-              Obx(() =>
-                  BottomBtnWidget('确定', enableClick.value ? _commit : null))
+              Obx(() => BottomBtnWidget(
+                  '确定', enableClick.value ? controller.commit : null))
             ],
           ),
         ),
       ),
     );
-  }
-
-  void _commit() {
-    MyToast.showToast('提交');
   }
 }

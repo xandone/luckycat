@@ -5,6 +5,7 @@ import 'package:luckycat/ui/add/add_account_page.dart';
 
 import '../ui/accouts/controller/account_controller.dart';
 import '../ui/add/controller/add_account_controller.dart';
+import '../ui/home/controller/home_controller.dart';
 import '../ui/home/home_page.dart';
 
 /// @author: xandone
@@ -20,14 +21,7 @@ class PageManifest {
       page: () {
         return HomePage();
       },
-      bindings: [],
-    ),
-    GetPage(
-      name: PagePath.mHomeAccouts,
-      page: () {
-        return AccountPage();
-      },
-      bindings: [BindingsBuilder.put(() => AccountController())],
+      bindings: [BindingsBuilder.put(() => HomeController())],
     ),
     GetPage(
       name: PagePath.mAddAccountPage,

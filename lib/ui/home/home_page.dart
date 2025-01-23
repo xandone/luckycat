@@ -5,12 +5,13 @@ import 'package:luckycat/ui/accouts/account_page.dart';
 import 'package:luckycat/ui/statistics/statistics_page.dart';
 
 import '../../res/colors.dart';
+import 'controller/home_controller.dart';
 
 /// @author: xiao
 /// created on: 2025/1/17 10:01
 /// description:
 
-class HomePage extends GetView {
+class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     RxInt _index = 0.obs;
@@ -38,7 +39,7 @@ class HomePage extends GetView {
         onPressed: () {
           Get.toNamed(PagePath.mAddAccountPage);
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

@@ -1,0 +1,75 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:6854043299320459793",
+      "lastPropertyId": "11:1607894232329318001",
+      "name": "AccountDao",
+      "properties": [
+        {
+          "id": "1:3035233467777186375",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "4:3497189419651167721",
+          "name": "accountId",
+          "type": 6
+        },
+        {
+          "id": "5:5332146042250451706",
+          "name": "date",
+          "type": 9
+        },
+        {
+          "id": "6:3982132570589155647",
+          "name": "price",
+          "type": 9
+        },
+        {
+          "id": "7:2869628002054767618",
+          "name": "dealType",
+          "type": 6
+        },
+        {
+          "id": "8:6087714232829139157",
+          "name": "modifyDate",
+          "type": 9
+        },
+        {
+          "id": "9:3922491675068585601",
+          "name": "remark",
+          "type": 9
+        },
+        {
+          "id": "10:903903584755751202",
+          "name": "platformType",
+          "type": 6
+        },
+        {
+          "id": "11:1607894232329318001",
+          "name": "platformName",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:6854043299320459793",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    7560239228901967471,
+    500484204116905958
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
