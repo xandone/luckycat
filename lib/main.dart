@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
+import 'package:luckycat/res/colors.dart';
 import 'package:luckycat/routes/page_manifest.dart';
 import 'package:luckycat/routes/page_path.dart';
 
@@ -17,10 +18,15 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   await initServices();
   runApp(const MyApp());
+
+  // 竖屏
+  SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 }
 
-Future initServices() async {
-}
+Future initServices() async {}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

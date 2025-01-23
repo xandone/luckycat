@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:luckycat/routes/page_path.dart';
 import 'package:luckycat/ui/accouts/account_page.dart';
+import 'package:luckycat/ui/add/add_account_page.dart';
 
 import '../ui/accouts/controller/account_controller.dart';
+import '../ui/add/controller/add_account_controller.dart';
 import '../ui/home/home_page.dart';
 
 /// @author: xandone
@@ -26,6 +28,13 @@ class PageManifest {
         return AccountPage();
       },
       bindings: [BindingsBuilder.put(() => AccountController())],
+    ),
+    GetPage(
+      name: PagePath.mAddAccountPage,
+      page: () {
+        return AddAccountPage();
+      },
+      bindings: [BindingsBuilder.put(() => AddAccountController())],
     ),
   ];
 }

@@ -8,4 +8,6 @@ class PagePath {
   static const mHomeAccouts = "/home/accouts";
 
   static const mHomeStatistics = "/home/statistics";
+
+  static const mAddAccountPage = "/addAccountPage";
 }
