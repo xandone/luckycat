@@ -16,4 +16,5 @@ class MyColors {
   static const Color divideLineColor = Color(0xFFE6EBF4);
   static const Color hintColor = Color(0xFFCED2DB);
   static const Color disadbleBtnColor = Color(0xFFADC6FF);
+  static const Color incomeColor = Color(0xFF5cd65c);
 }

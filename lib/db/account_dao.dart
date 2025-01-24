@@ -19,12 +19,14 @@ class AccountDao {
 
   int accountId;
   String date;
-  String price;
+  double price;
 
-  //0支出，1赎回
+  //0支出，1收入
   int dealType;
   String? modifyDate;
   String? remark;
+
+  //0JD，2ZH
   int platformType;
   String platformName;
 }

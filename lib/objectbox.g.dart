@@ -43,7 +43,7 @@ final _entities = <obx_int.ModelEntity>[
         obx_int.ModelProperty(
             id: const obx_int.IdUid(6, 3982132570589155647),
             name: 'price',
-            type: 9,
+            type: 8,
             flags: 0),
         obx_int.ModelProperty(
             id: const obx_int.IdUid(7, 2869628002054767618),
@@ -133,7 +133,6 @@ obx_int.ModelDefinition getObjectBoxModel() {
         },
         objectToFB: (AccountDao object, fb.Builder fbb) {
           final dateOffset = fbb.writeString(object.date);
-          final priceOffset = fbb.writeString(object.price);
           final modifyDateOffset = object.modifyDate == null
               ? null
               : fbb.writeString(object.modifyDate!);
@@ -144,7 +143,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
           fbb.addInt64(0, object.id);
           fbb.addInt64(3, object.accountId);
           fbb.addOffset(4, dateOffset);
-          fbb.addOffset(5, priceOffset);
+          fbb.addFloat64(5, object.price);
           fbb.addInt64(6, object.dealType);
           fbb.addOffset(7, modifyDateOffset);
           fbb.addOffset(8, remarkOffset);
@@ -162,8 +161,8 @@ obx_int.ModelDefinition getObjectBoxModel() {
               const fb.Int64Reader().vTableGet(buffer, rootOffset, 10, 0);
           final dateParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 12, '');
-          final priceParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 14, '');
+          final priceParam =
+              const fb.Float64Reader().vTableGet(buffer, rootOffset, 14, 0);
           final dealTypeParam =
               const fb.Int64Reader().vTableGet(buffer, rootOffset, 16, 0);
           final modifyDateParam = const fb.StringReader(asciiOptimization: true)
@@ -209,7 +208,7 @@ class AccountDao_ {
 
   /// See [AccountDao.price].
   static final price =
-      obx.QueryStringProperty<AccountDao>(_entities[0].properties[3]);
+      obx.QueryDoubleProperty<AccountDao>(_entities[0].properties[3]);
 
   /// See [AccountDao.dealType].
   static final dealType =

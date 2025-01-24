@@ -22,7 +22,7 @@ class AccoutModel {
   factory AccoutModel.fromJson(Map<String, dynamic> json) => AccoutModel(
         accountId: asT<int>(json['accountId'])!,
         date: asT<String>(json['date'])!,
-        price: asT<String>(json['price'])!,
+        price: asT<num>(json['price'])!.toDouble(),
         dealType: asT<int>(json['dealType'])!,
         modifyDate: asT<String>(json['modifyDate']),
         remark: asT<String>(json['remark']),
@@ -32,9 +32,9 @@ class AccoutModel {
 
   int accountId;
   String date;
-  String price;
+  double price;
 
-  //0支出，1赎回
+  //0支出，1收入
   int dealType;
   String? modifyDate;
   String? remark;

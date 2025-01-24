@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:luckycat/db/account_dao.dart';
 
+import '../../../config/constants.dart';
 import '../../../models/accout_model.dart';
 import '../../../models/utils/convert_utils.dart';
 import '../../../utils/date_format_utils.dart';
@@ -13,19 +14,25 @@ import '../../accouts/controller/account_controller.dart';
 
 class AddAccountController extends GetxController {
   final TextEditingController editingController = TextEditingController();
-  RxDouble inputMoney = 0.0.obs;
   AccountController accountController = Get.find();
 
-  void commit() {
+  RxInt dealType = 0.obs;
+  RxInt platformType = 0.obs;
+
+  commit() {
+    double price = double.tryParse(editingController.text) ?? 0;
+    if (dealType.value == 0) {
+      price = -price;
+    }
     AccoutModel model = AccoutModel(
         accountId: 1,
         date: MyDateUtil.getNowDateStr(),
-        price: editingController.text,
-        dealType: 0,
+        price: price,
+        dealType: dealType.value,
         modifyDate: null,
         remark: null,
-        platformType: 0,
-        platformName: '京东');
+        platformType: platformType.value,
+        platformName: Constants.platformNameList[platformType.value]);
 
     AccountDao dao = ConvertUtils.getDaoByAccountMoedel(bean: model);
     accountController.accountBox.addNote(dao);
