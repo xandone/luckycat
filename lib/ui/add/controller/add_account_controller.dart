@@ -6,6 +6,7 @@ import '../../../config/constants.dart';
 import '../../../models/accout_model.dart';
 import '../../../models/utils/convert_utils.dart';
 import '../../../utils/date_format_utils.dart';
+import '../../../utils/logger.dart';
 import '../../accouts/controller/account_controller.dart';
 
 /// @author: xiao
@@ -24,6 +25,7 @@ class AddAccountController extends GetxController {
     if (dealType.value == 0) {
       price = -price;
     }
+    Log.d('price=$price');
     AccoutModel model = AccoutModel(
         accountId: 1,
         date: MyDateUtil.getNowDateStr(),

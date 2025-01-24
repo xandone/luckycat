@@ -30,7 +30,7 @@ class HomePage extends GetView<AccountController> {
             currentIndex: _index.value,
             onTap: (index) => _index.value = index,
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: '账目'),
+              BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: '账本'),
               BottomNavigationBarItem(
                   icon: Icon(Icons.account_box), label: '统计')
             ],
