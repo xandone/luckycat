@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:luckycat/db/account_dao.dart';
-import 'package:luckycat/ui/home/controller/home_controller.dart';
 
+import '../../../db/account_box.dart';
+import '../../../db/objectbox.dart';
+import '../../../objectbox.g.dart';
 import '../../../utils/logger.dart';
 
 /// @author: xiao
@@ -9,17 +11,27 @@ import '../../../utils/logger.dart';
 /// description:
 
 class AccountController extends GetxController {
+  late AccountBox accountBox;
+
   RxList<AccountDao> datas = RxList();
-  HomeController homeController = Get.find();
 
   @override
   void onInit() {
+    Log.d('onInit..3');
+    initBox();
     super.onInit();
+  }
+
+  void initBox() async {
+    accountBox = AccountBox();
+    Box<AccountDao> box = await ObjectBox().createBox<AccountDao>();
+    accountBox.initBox(box);
+    getAllNotes();
   }
 
   void getAllNotes() {
     datas.clear();
-    homeController.accountBox.getNotes().first.then((list) {
+    accountBox.getNotes().first.then((list) {
       Log.d('len=${list.length}');
       datas.addAll(list);
     });

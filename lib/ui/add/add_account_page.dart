@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:luckycat/ui/home/controller/home_controller.dart';
-import 'package:luckycat/utils/date_format_utils.dart';
 
-import '../../models/accout_model.dart';
-import '../../models/utils/convert_utils.dart';
 import '../../res/colors.dart';
 import '../../res/gaps.dart';
 import '../../utils/utils.dart';

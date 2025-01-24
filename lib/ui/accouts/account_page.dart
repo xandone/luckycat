@@ -7,7 +7,7 @@ import 'package:luckycat/ui/accouts/controller/account_controller.dart';
 /// created on: 2025/1/22 14:43
 /// description:
 class AccountPage extends StatelessWidget {
-  AccountController controller = Get.put(AccountController());
+  AccountController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +16,13 @@ class AccountPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('账本'),
       ),
-      body: ListView.builder(
+      body: Obx(() => ListView.builder(
           itemCount: controller.datas.length,
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(controller.datas[index].price),
             );
-          }),
+          })),
     );
   }
 }
